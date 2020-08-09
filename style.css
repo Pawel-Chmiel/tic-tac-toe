@@ -1,0 +1,114 @@
+
+*,
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body{
+    box-sizing: border-box;
+}
+
+.header{
+    width: 100%;
+    background-color: #354f52;
+}
+.header__title{
+    text-transform: uppercase;
+    text-align: center;
+    padding: 30px;
+    color: #cad2c5;
+    letter-spacing: 2px;
+}
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.panel{
+    margin-top: 40px;
+    height: 24px;
+}
+.panel__text{
+    text-transform: uppercase;
+    color: #354f52;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+.board{
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 10px;
+    justify-content: center;
+    border: 2px solid #354f52;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 40px auto;
+}
+.board__item{
+    position: relative;
+    padding: 10px;
+    background-color: #52796f;
+    border: 2px solid #354f52;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .3s ease-in;
+}
+.board__item:hover{
+    background-color: #354f52;
+}
+.board__item--filled-x::before,
+.board__item--filled-x::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%) rotate(-45deg);
+    background-color: #572B1B;
+}
+.board__item--filled-x::after{ 
+    transform: translateY(-50%) rotate(45deg);
+}
+.board__item--filled-o::before{
+    position: absolute;
+    content: "";
+    width: 85%;
+    height: 85%;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    border: 5px solid #1A6358;
+}
+/* circle color: #1A6358 */
+
+.button{
+    padding: 10px 20px;
+    background-color: #354f52;
+    border: 2px solid #354f52;
+    border-radius: 5px;
+    color: #cad2c5;
+    outline: none;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: .3s ease-in;
+}
+.button:hover{
+    background-color: #cad2c5;
+    color: #354f52;
+}
+@media screen and (max-width: 768px){
+    .header__title{
+        font-size: 28px;
+    }
+}
+
