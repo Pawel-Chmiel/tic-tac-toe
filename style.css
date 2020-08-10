@@ -111,4 +111,13 @@ body{
         font-size: 28px;
     }
 }
+@media screen and (max-width: 1024px){
+    .board__item:hover{
+        background-color: #52796f;
+    } 
+    .button:hover{
+        background-color: #354f52;
+        color: #cad2c5;
+    }
+}
 
